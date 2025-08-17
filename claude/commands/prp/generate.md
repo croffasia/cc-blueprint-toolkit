@@ -2,7 +2,7 @@
 
 ## Feature file: $ARGUMENTS
 
-Generate a complete PRP for general feature implementation with thorough
+Generate a complete PRP (Product Requirements & Plans) for general feature implementation with thorough
 research. Ensure context is passed to the AI agent to enable self-validation and
 iterative refinement. Read the feature file first to understand what needs to be
 created, how the examples provided help, and any other considerations.
@@ -15,33 +15,58 @@ documentation and examples.
 
 ## Research Process
 
-1. **Codebase Analysis**
+**Sequential Research Phase** (Codebase first, then smart external research)
+
+1. **Codebase Analysis** (Use subagent: `prp-codebase-research`)
     - Search for similar features/patterns in the codebase
     - Identify files to reference in PRP
     - Note existing conventions to follow
     - Check test patterns for validation approach
+    - **CRITICAL**: Document what components/libraries/patterns already exist
+    - **ASSESS**: Determine knowledge gaps that truly need external research
 
-2. **External Research**
-    - Search for similar features/patterns online
-    - Library documentation (include specific URLs)
-    - Implementation examples (GitHub/StackOverflow/blogs)
-    - Best practices and common pitfalls
+2. **Smart External Research Decision** (Evaluate AFTER codebase analysis)
+   
+   **FIRST: Analyze codebase findings to determine if external research is needed:**
+   
+   **SKIP External Research if:**
+   - ✅ Similar components/patterns found in codebase (internal project components)
+   - ✅ Clear implementation path from existing code
+   - ✅ Standard CRUD/UI operations using existing patterns
+   - ✅ Internal utility functions/services already available
+   
+   **PROCEED with External Research ONLY if:**
+   - ❌ New external npm/library integration needed (get current docs)
+   - ❌ Existing external library usage but complex/undocumented features needed
+   - ❌ Complex algorithm or pattern not in codebase
+   - ❌ Security/performance considerations beyond current code
+   - ❌ External API integration without existing examples
+   - ❌ **No similar patterns/components found in codebase** (need external examples)
+   
+   **If External Research is needed** (Use subagent: `prp-research-agent`):
+   - Focus ONLY on missing knowledge gaps identified above
+   - External npm/library documentation for NEW packages or complex features
+   - Best practices for COMPLEX patterns not in codebase
+   - Security considerations for NEW external integrations
+   - **AVOID**: Researching internal project components (use codebase instead)
 
-3. **User Clarification** (if needed)
+3. **User Clarification** (Use if needed after research completion)
     - Specific patterns to mirror and where to find them?
     - Integration requirements and where to find them?
     - Which existing service to use and its file path?
+    - **NEW**: Confirm if external research is truly needed for identified gaps
 
 ## PRP Generation
 
-Using PRPs/templates/prp_base.md as template:
+Using PRPs/templates/prp_document_template.md as template:
 
 ### Critical Context to Include and pass to the AI agent as part of the PRP
 
-- **Documentation**: URLs with specific sections
-- **Code Examples**: Real snippets from codebase
-- **Gotchas**: Library quirks, version issues
-- **Patterns**: Existing approaches to follow
+- **Code Examples**: Real snippets from codebase (PRIMARY FOCUS)
+- **Patterns**: Existing approaches to follow (MIRROR THESE)
+- **Documentation**: URLs ONLY for new/missing knowledge gaps
+- **Gotchas**: Library quirks, version issues from codebase analysis
+- **Research Justification**: Explain why external research was/wasn't needed
 
 ### Implementation Blueprint
 

@@ -19,7 +19,7 @@ Traditional AI coding often produces random, disconnected code that doesn't inte
 ## ✨ Features
 
 - **🎯 Universal Templates** - Framework-agnostic PRP templates that work with any language or architecture
-- **🔍 Intelligent Research** - Automated codebase analysis and external documentation discovery
+- **🔍 Intelligent Research** - Dedicated Opus-powered agents for codebase analysis and external documentation discovery
 - **⚡ Self-Validating** - Built-in validation loops with executable tests and linting integration
 - **🧠 Context-Rich** - Information-dense specifications that enable one-pass implementation
 - **🔄 Progressive Success** - Start simple, validate, then enhance methodology
@@ -48,22 +48,30 @@ Syntax Check → Type Check → Tests → Build → Manual Verification
 
 ### Installation
 
-1. **Copy Commands to Claude Code**
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/claude-code-prp-generator.git
+   cd claude-code-prp-generator
+   ```
+
+2. **Copy Commands and Agents to Claude Code**
    
    **Option A: Global Installation (Recommended)**
    ```bash
-   # Copy commands to your global Claude Code configuration
+   # Copy commands and agents to your global Claude Code configuration
    cp -r claude/commands ~/.claude/commands/
+   cp -r claude/agents ~/.claude/agents/
    ```
    
    **Option B: Project-Specific Installation**
    ```bash
-   # Copy commands to your project's .claude directory
-   mkdir -p .claude/commands
+   # Copy commands and agents to your project's .claude directory
+   mkdir -p .claude/commands .claude/agents
    cp -r claude/commands/* .claude/commands/
+   cp -r claude/agents/* .claude/agents/
    ```
 
-2. **Copy PRP Templates to Your Project**
+3. **Copy PRP Templates to Your Project**
    ```bash
    # In your target project directory
    cp -r /path/to/claude-code-prp-generator/PRPs/ ./PRPs/
@@ -74,16 +82,16 @@ Syntax Check → Type Check → Tests → Build → Manual Verification
 1. **Generate a PRP**
    ```bash
    # Option A: From feature specification file
-   /generate-prp @feature-specification.md
+   /prp:generate @feature-specification.md
    
    # Option B: Direct task description
-   /generate-prp Add user authentication with OAuth2 and JWT tokens
+   /prp:generate Add user authentication with OAuth2 and JWT tokens
    ```
 
 2. **Execute a PRP**
    ```bash
    # In Claude Code CLI
-   /execute-prp @PRPs/my-feature.md
+   /prp:execute @PRPs/my-feature.md
    ```
 
 ## 📁 Project Structure
@@ -91,12 +99,16 @@ Syntax Check → Type Check → Tests → Build → Manual Verification
 ```
 claude-code-prp-generator/
 ├── claude/
+│   ├── agents/             # Claude Code agent definitions
+│   │   ├── prp-codebase-research.md
+│   │   └── prp-research-agent.md
 │   └── commands/           # Claude Code command definitions
-│       ├── generate-prp.md # PRP generation command
-│       └── execute-prp.md  # PRP execution command
+│       └── prp/            # PRP commands directory
+│           ├── generate.md # PRP generation command
+│           └── execute.md  # PRP execution command
 ├── PRPs/
 │   └── templates/         # Universal PRP templates
-│       └── prp_base.md   # Framework-agnostic base template
+│       └── prp_document_template.md   # Framework-agnostic base template
 ├── CLAUDE.md             # Claude Code project guidance
 └── README.md            # This file
 ```
@@ -114,16 +126,16 @@ The universal PRP template includes:
 
 ## 🛠️ Commands
 
-### `/generate-prp <feature-file>`
+### `/prp:generate <feature-file>`
 
 Creates a comprehensive PRP through automated research:
 
-1. **Codebase Analysis** - Identifies similar patterns and conventions
-2. **External Research** - Gathers documentation and best practices
+1. **Codebase Analysis** - Specialized agent identifies similar patterns and conventions
+2. **External Research** - Secondary agent gathers external docs when codebase info is insufficient
 3. **Context Assembly** - Builds information-dense implementation guide
 4. **Validation Setup** - Configures project-specific quality gates
 
-### `/execute-prp <prp-file>`
+### `/prp:execute <prp-file>`
 
 Implements features from PRP specifications:
 
@@ -132,6 +144,22 @@ Implements features from PRP specifications:
 3. **Pattern Mirroring** - Study and replicate reference implementations
 4. **Iterative Implementation** - Code generation with validation loops
 5. **Quality Assurance** - Run all validation gates until passing
+
+## 🤖 Research Agents
+
+The PRP generator uses specialized Opus-powered agents for intelligent research:
+
+### `prp-codebase-research`
+- **Purpose**: Internal codebase analysis and pattern discovery
+- **Capabilities**: Analyzes project structure, existing patterns, validation tools, and architectural conventions
+- **When Used**: Always runs first to discover existing implementations and project patterns
+
+### `prp-research-agent`  
+- **Purpose**: External documentation and best practices research
+- **Capabilities**: Fetches official docs, analyzes industry standards, finds implementation examples
+- **When Used**: Only when codebase analysis reveals knowledge gaps requiring external research
+
+> **Model Configuration**: Both agents use `model: opus` by default for enhanced research quality. Remove or modify this setting in agent files to use different models.
 
 ## 🎯 Best Practices
 

@@ -108,24 +108,24 @@ consistency.
 ```yaml
 Task 1:
 MODIFY [path/to/existing_file]:
-  - FIND pattern: "[existing_pattern_to_locate]"
-  - INJECT after line containing "[specific_line_marker]"
-  - PRESERVE existing [method_signatures/props/interfaces]
+   - FIND pattern: "[existing_pattern_to_locate]"
+   - INJECT after line containing "[specific_line_marker]"
+   - PRESERVE existing [method_signatures/props/interfaces]
 
 CREATE [path/to/new_file]:
-  - MIRROR pattern from: [path/to/similar_file]
-  - MODIFY [class/component/function] name and core logic
-  - KEEP [error_handling/styling/structure] pattern identical
+   - MIRROR pattern from: [path/to/similar_file]
+   - MODIFY [class/component/function] name and core logic
+   - KEEP [error_handling/styling/structure] pattern identical
 
 INSTALL dependencies (if needed):
-  - ADD: [package_name@version] to [package.json/requirements.txt/Cargo.toml]
-  - CONFIGURE: [specific_setup_needed]
+   - ADD: [package_name@version] to [package.json/requirements.txt/Cargo.toml]
+   - CONFIGURE: [specific_setup_needed]
 
 UPDATE configuration:
-  - MODIFY: [config_file_path]
-  - ADD: [new_config_options]
+   - MODIFY: [config_file_path]
+   - ADD: [new_config_options]
 
-...(...)
+   ...(...)
 
 Task N:
 ...
@@ -184,40 +184,40 @@ function NewFeatureComponent({ props }: Props) {
 ```yaml
 # Backend Integration Points
 DATABASE (if applicable):
-    - migration: '[SQL/NoSQL migration details]'
-    - index: '[Index creation for performance]'
-    - schema: '[Schema changes needed]'
+   - migration: '[SQL/NoSQL migration details]'
+   - index: '[Index creation for performance]'
+   - schema: '[Schema changes needed]'
 
 API/ROUTES:
-    - add to: [routes_file_path]
-    - pattern: '[route_registration_pattern]'
-    - middleware: '[auth/validation middleware needed]'
+   - add to: [routes_file_path]
+   - pattern: '[route_registration_pattern]'
+   - middleware: '[auth/validation middleware needed]'
 
 CONFIG:
-    - add to: [config_file_path]
-    - pattern: '[environment_variable_pattern]'
-    - secrets: '[secret/key management]'
+   - add to: [config_file_path]
+   - pattern: '[environment_variable_pattern]'
+   - secrets: '[secret/key management]'
 
 # Frontend Integration Points
 ROUTING:
-    - add to: [router_config_path]
-    - pattern: '[route_definition_pattern]'
-    - guards: '[auth/permission guards needed]'
+   - add to: [router_config_path]
+   - pattern: '[route_definition_pattern]'
+   - guards: '[auth/permission guards needed]'
 
 STATE_MANAGEMENT:
-    - add to: [store/context_path]
-    - pattern: '[state_update_pattern]'
-    - actions: '[action_creators/mutations needed]'
+   - add to: [store/context_path]
+   - pattern: '[state_update_pattern]'
+   - actions: '[action_creators/mutations needed]'
 
 STYLES:
-    - add to: [styles_path]
-    - pattern: '[css/styling_pattern]'
-    - theme: '[theme_integration_needed]'
+   - add to: [styles_path]
+   - pattern: '[css/styling_pattern]'
+   - theme: '[theme_integration_needed]'
 
 COMPONENTS:
-    - register in: [component_registry_path]
-    - export from: [index_file_path]
-    - props: '[prop_interface_definitions]'
+   - register in: [component_registry_path]
+   - export from: [index_file_path]
+   - props: '[prop_interface_definitions]'
 ```
 
 ## Validation Loop
