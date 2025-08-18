@@ -1,4 +1,4 @@
-name: "Universal PRP Template v3 - Framework-Agnostic Implementation Guide"
+name: "Universal PRP Template v1.1.0 - Framework-Agnostic Implementation Guide"
 description: |
 
 ## Purpose
@@ -19,6 +19,25 @@ working code through iterative refinement.
 
 ---
 
+## Discovery Summary
+
+### Initial Task Analysis
+
+[Brief summary of user's original request and initial assessment]
+
+### User Clarifications Received
+
+[Document any questions asked during Phase 1 and user responses]
+
+- **Question**: [What was unclear about the business logic?]
+- **Answer**: [User's clarification]
+- **Impact**: [How this affects implementation approach]
+
+### Missing Requirements Identified
+
+[List any requirements that were initially missing but discovered during Phase
+1]
+
 ## Goal
 
 [What needs to be built - be specific about the end state and desires]
@@ -38,6 +57,14 @@ working code through iterative refinement.
 - [ ] [Specific measurable outcomes]
 
 ## All Needed Context
+
+### Research Phase Summary
+
+[Summary of Phase 1 discovery findings and Phase 2 research decisions]
+
+- **Codebase patterns found**: [Similar components/patterns identified]
+- **External research needed**: [Yes/No with justification]
+- **Knowledge gaps identified**: [What wasn't available in codebase]
 
 ### Documentation & References (list all context needed to implement the feature)
 
@@ -184,40 +211,40 @@ function NewFeatureComponent({ props }: Props) {
 ```yaml
 # Backend Integration Points
 DATABASE (if applicable):
-   - migration: '[SQL/NoSQL migration details]'
-   - index: '[Index creation for performance]'
-   - schema: '[Schema changes needed]'
+  - migration: '[SQL/NoSQL migration details]'
+  - index: '[Index creation for performance]'
+  - schema: '[Schema changes needed]'
 
 API/ROUTES:
-   - add to: [routes_file_path]
-   - pattern: '[route_registration_pattern]'
-   - middleware: '[auth/validation middleware needed]'
+  - add to: [routes_file_path]
+  - pattern: '[route_registration_pattern]'
+  - middleware: '[auth/validation middleware needed]'
 
 CONFIG:
-   - add to: [config_file_path]
-   - pattern: '[environment_variable_pattern]'
-   - secrets: '[secret/key management]'
+  - add to: [config_file_path]
+  - pattern: '[environment_variable_pattern]'
+  - secrets: '[secret/key management]'
 
 # Frontend Integration Points
 ROUTING:
-   - add to: [router_config_path]
-   - pattern: '[route_definition_pattern]'
-   - guards: '[auth/permission guards needed]'
+  - add to: [router_config_path]
+  - pattern: '[route_definition_pattern]'
+  - guards: '[auth/permission guards needed]'
 
 STATE_MANAGEMENT:
-   - add to: [store/context_path]
-   - pattern: '[state_update_pattern]'
-   - actions: '[action_creators/mutations needed]'
+  - add to: [store/context_path]
+  - pattern: '[state_update_pattern]'
+  - actions: '[action_creators/mutations needed]'
 
 STYLES:
-   - add to: [styles_path]
-   - pattern: '[css/styling_pattern]'
-   - theme: '[theme_integration_needed]'
+  - add to: [styles_path]
+  - pattern: '[css/styling_pattern]'
+  - theme: '[theme_integration_needed]'
 
 COMPONENTS:
-   - register in: [component_registry_path]
-   - export from: [index_file_path]
-   - props: '[prop_interface_definitions]'
+  - register in: [component_registry_path]
+  - export from: [index_file_path]
+  - props: '[prop_interface_definitions]'
 ```
 
 ## Validation Loop

@@ -2,59 +2,99 @@
 
 ## Feature file: $ARGUMENTS
 
-Generate a complete PRP (Product Requirements & Plans) for general feature implementation with thorough
-research. Ensure context is passed to the AI agent to enable self-validation and
-iterative refinement. Read the feature file first to understand what needs to be
-created, how the examples provided help, and any other considerations.
+Generate a complete PRP (Product Requirements & Plans) for general feature
+implementation with thorough research. This workflow includes an initial
+discovery phase to validate task completeness before comprehensive research
+begins.
+
+## Workflow Summary
+
+- Phase 1 discovery identifies missing business logic early
+- Two-phase approach ensures complete requirements before development
+- Better input quality leads to higher-quality PRP outputs
+
+Ensure context is passed to the AI agent to enable self-validation and iterative
+refinement. Read the feature file first to understand what needs to be created,
+how the examples provided help, and any other considerations.
 
 The AI agent only gets the context you are appending to the PRP and training
-data. Assuma the AI agent has access to the codebase and the same knowledge
-cutoff as you, so its important that your research findings are included or
+data. Assume the AI agent has access to the codebase and the same knowledge
+cutoff as you, so it's important that your research findings are included or
 referenced in the PRP. The Agent has Websearch capabilities, so pass urls to
 documentation and examples.
 
 ## Research Process
 
-**Sequential Research Phase** (Codebase first, then smart external research)
+**Phase 1: Initial Discovery & Task Validation** (Validate task completeness
+before deep research)
+
+1. **Surface Discovery Analysis** (Use subagent: `prp-surface-discovery`)
+   - Quick scan of project structure for similar features/patterns
+   - Analyze user's task description for business logic completeness
+   - Identify gaps in user requirements and missing business logic details:
+     - User flows and interaction patterns
+     - Data requirements and relationships
+     - Integration points with existing features
+     - Edge cases and error scenarios
+     - UI/UX expectations and constraints
+   - Generate targeted clarification questions if gaps identified
+   - Make proceed/clarify recommendation with clear reasoning
+
+2. **Decision Gate**:
+   - **IF** prp-surface-discovery recommends PROCEED → Continue to Phase 2
+   - **IF** prp-surface-discovery identifies gaps → Stop and ask clarifying
+     questions
+   - **ONLY** continue to comprehensive research after user provides missing
+     details
+   - Use surface discovery findings to inform Phase 2 research focus
+
+**Phase 2: Comprehensive Research Phase** (After task validation - Codebase
+first, then smart external research)
 
 1. **Codebase Analysis** (Use subagent: `prp-codebase-research`)
-    - Search for similar features/patterns in the codebase
-    - Identify files to reference in PRP
-    - Note existing conventions to follow
-    - Check test patterns for validation approach
-    - **CRITICAL**: Document what components/libraries/patterns already exist
-    - **ASSESS**: Determine knowledge gaps that truly need external research
+   - Search for similar features/patterns in the codebase
+   - Identify files to reference in PRP
+   - Note existing conventions to follow
+   - Check test patterns for validation approach
+   - **CRITICAL**: Document what components/libraries/patterns already exist
+   - **ASSESS**: Determine knowledge gaps that truly need external research
 
 2. **Smart External Research Decision** (Evaluate AFTER codebase analysis)
-   
-   **FIRST: Analyze codebase findings to determine if external research is needed:**
-   
+
+   **FIRST: Analyze codebase findings to determine if external research is
+   needed:**
+
    **SKIP External Research if:**
-   - ✅ Similar components/patterns found in codebase (internal project components)
+   - ✅ Similar components/patterns found in codebase (internal project
+     components)
    - ✅ Clear implementation path from existing code
    - ✅ Standard CRUD/UI operations using existing patterns
    - ✅ Internal utility functions/services already available
-   
+
    **PROCEED with External Research ONLY if:**
    - ❌ New external npm/library integration needed (get current docs)
-   - ❌ Existing external library usage but complex/undocumented features needed
+   - ❌ Existing external library usage but complex/undocumented features
+     needed
    - ❌ Complex algorithm or pattern not in codebase
    - ❌ Security/performance considerations beyond current code
    - ❌ External API integration without existing examples
-   - ❌ **No similar patterns/components found in codebase** (need external examples)
-   
+   - ❌ **No similar patterns/components found in codebase** (need external
+     examples)
+
    **If External Research is needed** (Use subagent: `prp-research-agent`):
    - Focus ONLY on missing knowledge gaps identified above
    - External npm/library documentation for NEW packages or complex features
    - Best practices for COMPLEX patterns not in codebase
    - Security considerations for NEW external integrations
    - **AVOID**: Researching internal project components (use codebase instead)
+   - **Agent returns all findings directly in response context**
 
-3. **User Clarification** (Use if needed after research completion)
-    - Specific patterns to mirror and where to find them?
-    - Integration requirements and where to find them?
-    - Which existing service to use and its file path?
-    - **NEW**: Confirm if external research is truly needed for identified gaps
+3. **Technical Clarification** (Use if needed after research completion)
+   - **ONLY** for technical implementation details, not business logic
+   - Specific patterns to mirror and where to find them?
+   - Integration requirements and where to find them?
+   - Which existing service to use and its file path?
+   - Confirm if external research is truly needed for identified gaps
 
 ## PRP Generation
 
@@ -62,9 +102,13 @@ Using PRPs/templates/prp_document_template.md as template:
 
 ### Critical Context to Include and pass to the AI agent as part of the PRP
 
+- **Discovery Findings**: Document Phase 1 findings and any user clarifications
+  received
+- **Business Logic**: Complete requirements gathered from user interactions
 - **Code Examples**: Real snippets from codebase (PRIMARY FOCUS)
 - **Patterns**: Existing approaches to follow (MIRROR THESE)
 - **Documentation**: URLs ONLY for new/missing knowledge gaps
+- **Research Integration**: All external research findings are provided directly in agent response context for immediate integration into PRP
 - **Gotchas**: Library quirks, version issues from codebase analysis
 - **Research Justification**: Explain why external research was/wasn't needed
 
