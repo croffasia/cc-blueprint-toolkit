@@ -8,7 +8,11 @@
 Stop spending hours on features that should take minutes. One Claude Code command generates a complete implementation plan, another delivers production-ready code with tests.
 
 ```bash
-/prp:generate "Add user authentication with OAuth2"
+/brainstorm Add user authentication with OAuth2
+# → Smart feature planning session → docs/brainstorming/2025-08-22-user-auth.md
+
+/prp:generate @docs/brainstorming/2025-08-22-user-auth.md
+# OR directly: /prp:generate Add user authentication with OAuth2
 # → Complete implementation blueprint
 
 /prp:execute @PRPs/user-auth.md  
@@ -17,6 +21,8 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 
 **Before**: 2-4 hours of coding, debugging, and integration  
 **After**: 15 minutes → Production-ready feature ✨
+
+> ⭐ **Found this helpful? Star the repo** and share it with a fellow developer who's tired of vibe coding!
 
 ## 🔥 Why Developers Love It
 
@@ -55,33 +61,44 @@ Stop spending hours on features that should take minutes. One Claude Code comman
    cp -r claude/agents/* .claude/agents/
    ```
 
-3. **Copy PRP Templates to Your Project**
+3. **Copy Templates to Your Project**
    ```bash
    # In your target project directory
    cp -r /path/to/claude-code-prp-generator/PRPs/ ./PRPs/
+   cp -r /path/to/claude-code-prp-generator/docs/ ./docs/
    ```
 
 ### Basic Usage
 
 ```bash
-# 1. Generate a feature plan
-/prp:generate "Add user authentication with OAuth2 and JWT tokens"
+# 1. Plan your feature (optional but recommended)
+/brainstorm Add user authentication with OAuth2 and JWT tokens
 
-# 2. Execute the plan  
+# 2. Generate implementation blueprint
+/prp:generate @docs/brainstorming/2025-08-22-user-auth.md
+# OR directly: /prp:generate Add user authentication with OAuth2 and JWT tokens
+
+# 3. Execute the plan  
 /prp:execute @PRPs/user-auth.md
 
-# 3. Done! ✨
+# 4. Done! ✨
 ```
 
 ## 🎯 How It Works
 
-### 1. **Create Perfect Plan** (`/prp:generate`)
+### 1. **Think Through Your Feature** (`/brainstorm`) *Optional*
+- Smart AI Scrum Master guides you through structured planning
+- Asks the right questions to uncover hidden requirements
+- Creates comprehensive feature documentation
+- Perfect for solo developers who need a thinking partner
+
+### 2. **Create Perfect Plan** (`/prp:generate`)
 - Validates your request is complete
 - Studies your codebase patterns
 - Researches external docs if needed
 - Creates detailed implementation plan
 
-### 2. **Execute the Plan** (`/prp:execute`)
+### 3. **Execute the Plan** (`/prp:execute`)
 - Follows your patterns exactly
 - Writes production-ready code
 - Runs tests and linting
@@ -113,7 +130,8 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 
 | Command | Purpose | Example |
 |---------|---------|---------|
-| `/prp:generate` | Create implementation plan | `/prp:generate "Add file upload with S3"` |
+| `/brainstorm` | Smart feature planning session | `/brainstorm Add file upload with S3` |
+| `/prp:generate` | Create implementation plan | `/prp:generate Add file upload with S3` |
 | `/prp:execute` | Run the plan | `/prp:execute @PRPs/file-upload.md` |
 
 ## 📁 What's Included
@@ -121,15 +139,16 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 ```
 📦 claude-code-prp-generator/
 ├── 🤖 claude/agents/           # Smart research agents
-├── ⚡ claude/commands/         # Simple commands  
-└── 📋 PRPs/templates/          # Universal PRP framework
+├── ⚡ claude/commands/         # Simple commands (brainstorm, prp:generate, prp:execute)  
+├── 📋 PRPs/templates/          # Universal PRP framework
+└── 📚 docs/templates/          # Brainstorming session templates
 ```
 
 ## 🎯 Perfect For
 
-- **Solo Developers** - Get team-level productivity
+- **Solo Developers** - Get team-level productivity + AI thinking partner for feature planning
 - **Agencies** - Handle diverse client projects efficiently
-- **Startups** - Ship features 10x faster
+- **Startups** - Ship features 10x faster with structured planning
 - **Large Teams** - Maintain consistency across developers
 
 ## 🤝 Join the Community
@@ -151,4 +170,4 @@ MIT License - Use freely in commercial projects
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 
-**v1.1.0** | *Updated: August 18, 2025*
+**v1.2.0** | *Updated: August 22, 2025*
