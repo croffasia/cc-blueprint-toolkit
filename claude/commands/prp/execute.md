@@ -1,3 +1,9 @@
+---
+description: Implement features from PRP specifications with comprehensive validation and testing
+argument-hint: [path/to/prp-file.md]
+allowed-tools: TodoWrite, Read, Write, Edit, MultiEdit, Glob, Grep, Bash, NotebookEdit
+---
+
 # Execute BASE PRP
 
 Implement a feature using using the PRP file.

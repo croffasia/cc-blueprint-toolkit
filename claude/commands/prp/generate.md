@@ -1,3 +1,9 @@
+---
+description: Generate comprehensive PRP (Product Requirements & Plans) with thorough research and validation
+argument-hint: [feature description or user story]
+allowed-tools: TodoWrite, Read, Write, Glob, Grep, Bash, Task, WebSearch, WebFetch
+---
+
 # Create PRP
 
 ## Feature file: $ARGUMENTS
@@ -37,6 +43,9 @@ before deep research)
      - Integration points with existing features
      - Edge cases and error scenarios
      - UI/UX expectations and constraints
+   - **Language Guidelines for Questions**: 
+     - Ask clarification questions in the same language the user wrote the initial task
+     - Wait for user responses and analyze thoroughly
    - Generate targeted clarification questions if gaps identified
    - Make proceed/clarify recommendation with clear reasoning
 
@@ -95,6 +104,18 @@ first, then smart external research)
    - Integration requirements and where to find them?
    - Which existing service to use and its file path?
    - Confirm if external research is truly needed for identified gaps
+
+## Language Guidelines
+
+### User Interaction Language
+- **Questions & Communication**: Ask all clarification questions in the same language the user wrote the initial task
+- **Analysis & Discussion**: Continue using the user's language throughout the discovery and research phases
+
+### PRP Document Language  
+- **Final Document**: Always write the PRP document in English for consistency and international team compatibility
+- **User Response Translation**: When incorporating user responses into the PRP, translate them to English while preserving the original meaning
+- **Code Examples**: Always use English comments and variable names in technical examples
+- **Technical Terms**: Use standard English technical terminology in the final document
 
 ## PRP Generation
 
