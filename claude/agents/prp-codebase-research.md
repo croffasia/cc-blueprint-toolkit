@@ -21,10 +21,12 @@ When invoked, you must follow these steps:
 
 1. **Project Structure Analysis**
    - Use LS to examine the overall project structure and module organization
-   - Read key configuration files (package.json, tsconfig.json, and relevant
+   - Read key configuration files (package.json, requirements.txt, Cargo.toml, 
+     pom.xml, go.mod, composer.json, Pipfile, pyproject.toml, and relevant 
      framework config files)
    - Analyze the project's modular architecture and directory structure
    - Document the module hierarchy and sub-module organization patterns
+   - Identify project type (frontend, backend, fullstack, CLI, library)
 
 2. **Pattern Discovery & Convention Analysis**
    - Use Grep/Glob to find similar features and existing implementations
@@ -34,13 +36,32 @@ When invoked, you must follow these steps:
    - Research internationalization, localization, or configuration patterns if
      present
 
-3. **Reference Implementation Discovery**
+3. **Database & Data Layer Analysis** (if applicable)
+   - Search for database configurations (config files, connection strings, env vars)
+   - Identify database technologies (SQL: PostgreSQL, MySQL, SQLite; NoSQL: MongoDB, Redis)
+   - Analyze ORM/ODM patterns (Prisma, TypeORM, Sequelize, SQLAlchemy, Django ORM, 
+     Hibernate, Eloquent, ActiveRecord, Mongoose, etc.)
+   - Find migration files, schema definitions, and seed data patterns
+   - Research query patterns (raw SQL, query builders, repository patterns)
+   - Document transaction handling and connection pooling approaches
+   - Analyze data validation and serialization patterns
+   - Search for database testing strategies and fixtures
+
+4. **Internal Documentation Analysis**
+   - Read project documentation (README.md, CONTRIBUTING.md, docs/, wiki/)
+   - Analyze inline code comments and docstrings for business logic context
+   - Search for architecture decision records (ADRs) and design documents
+   - Document API specifications, schema definitions, and integration guides
+   - Research deployment guides and environment setup instructions
+   - Find troubleshooting guides and known issues documentation
+
+5. **Reference Implementation Discovery**
    - Search for existing implementations that match the requested feature
    - Identify specific files, modules, classes, and patterns to reference
    - Document exact file paths and line numbers for key examples
    - Analyze error handling, validation, and security patterns used
 
-4. **Validation Strategy Research**
+6. **Validation Strategy Research**
    - Read project configuration files to identify available validation commands
    - Test validation commands using Bash (lint, type-check, test, build
      scripts)
@@ -48,14 +69,14 @@ When invoked, you must follow these steps:
    - Document exact validation commands and their outputs
    - Research compatibility requirements with current tech stack
 
-5. **Development Workflow Analysis**
+7. **Development Workflow Analysis**
    - Analyze existing development patterns and best practices used in the
      project
    - Identify code organization standards and module creation patterns
    - Research application flow patterns and request handling approaches
    - Document data access patterns and API integration approaches
 
-6. **Technical Standards Documentation**
+8. **Technical Standards Documentation**
    - Analyze language configurations and usage patterns (TypeScript, etc.)
    - Research existing code design patterns and architectural standards
    - Identify quality implementations and non-functional requirements
@@ -90,19 +111,33 @@ Provide your final response organized as follows:
 - Naming conventions and organizational patterns
 - Architectural approaches used
 
-### 3. Reference Implementations
+### 3. Database & Data Layer (if applicable)
+
+- Database technologies and ORM/ODM patterns identified
+- Migration and schema management approaches
+- Query patterns and data access layer architecture
+- Transaction and connection management strategies
+
+### 4. Internal Documentation Summary
+
+- Key documentation files and their contents
+- Architecture decisions and design rationale
+- API specifications and integration guidelines
+- Business logic context from comments and docs
+
+### 5. Reference Implementations
 
 - Specific files and components to reference
 - Code examples with file paths and line numbers
 - Implementation patterns to follow
 
-### 4. Validation Strategy
+### 6. Validation Strategy
 
 - Available validation commands (exact syntax)
 - Testing frameworks and patterns identified
 - Compatibility requirements and constraints
 
-### 5. Development Guidelines
+### 7. Development Guidelines
 
 - Project-specific conventions to follow
 - Integration points with existing systems
