@@ -38,7 +38,7 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 
 ## 🚀 Quick Start
 
-### Installation
+### How to Install
 
 1. **Clone the Repository**
    ```bash
@@ -51,15 +51,13 @@ Stop spending hours on features that should take minutes. One Claude Code comman
    **Option A: Global Installation (Recommended)**
    ```bash
    # Copy commands and agents to your global Claude Code configuration
-   cp -r claude/commands/* ~/.claude/commands/
-   cp -r claude/agents/* ~/.claude/agents/
+   cp -r claude/* ~/.claude/
    ```
 
    **Option B: Project-Specific Installation**
    ```bash
    # Copy commands and agents to your project's .claude directory
-   cp -r claude/commands/* .claude/commands/
-   cp -r claude/agents/* .claude/agents/
+   cp -r claude/* .claude/
    ```
 
 3. **Copy Templates to Your Project**
