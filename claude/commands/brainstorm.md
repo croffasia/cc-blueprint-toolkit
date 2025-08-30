@@ -46,7 +46,7 @@ Always start by understanding:
 - Group similar ideas together
 - Identify priorities using MoSCoW or similar methods
 - Estimate complexity and effort (T-shirt sizing)
-- Create actionable items with clear ownership
+- Create actionable items
 
 ## Session Structure
 
@@ -162,7 +162,7 @@ Using `docs/templates/brainstorming_session_template.md` as the foundation, I wi
 
 ### Key Features of Our Template
 - **8 comprehensive sections** covering all aspects of feature planning
-- **Action accountability** with clear ownership and deadlines
+- **Action accountability** with clear next steps
 - **Risk management** with mitigation strategies
 - **Integration points** for sprint planning and backlog management
 - **Decision transparency** for future reference and retrospectives

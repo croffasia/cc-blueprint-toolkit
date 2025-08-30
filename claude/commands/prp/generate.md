@@ -34,7 +34,7 @@ documentation and examples.
 **Phase 1: Initial Discovery & Task Validation** (Validate task completeness
 before deep research)
 
-1. **Surface Discovery Analysis** (Use subagent: `prp-surface-discovery`)
+1. **Preflight Analysis** (Use subagent: `preflight-prp`)
    - Quick scan of project structure for similar features/patterns
    - Analyze user's task description for business logic completeness
    - Identify gaps in user requirements and missing business logic details:
@@ -50,8 +50,8 @@ before deep research)
    - Make proceed/clarify recommendation with clear reasoning
 
 2. **Decision Gate**:
-   - **IF** prp-surface-discovery recommends PROCEED → Continue to Phase 2
-   - **IF** prp-surface-discovery identifies gaps → Stop and ask clarifying
+   - **IF** preflight-prp recommends PROCEED → Continue to Phase 2
+   - **IF** preflight-prp identifies gaps → Stop and ask clarifying
      questions
    - **ONLY** continue to comprehensive research after user provides missing
      details
@@ -60,7 +60,7 @@ before deep research)
 **Phase 2: Comprehensive Research Phase** (After task validation - Codebase
 first, then smart external research)
 
-1. **Codebase Analysis** (Use subagent: `prp-codebase-research`)
+1. **Codebase Analysis** (Use subagent: `codebase-research`)
    - Search for similar features/patterns in the codebase
    - Identify files to reference in PRP
    - Note existing conventions to follow
@@ -90,7 +90,7 @@ first, then smart external research)
    - ❌ **No similar patterns/components found in codebase** (need external
      examples)
 
-   **If External Research is needed** (Use subagent: `prp-research-agent`):
+   **If External Research is needed** (Use subagent: `research-agent`):
    - Focus ONLY on missing knowledge gaps identified above
    - External npm/library documentation for NEW packages or complex features
    - Best practices for COMPLEX patterns not in codebase
@@ -119,7 +119,7 @@ first, then smart external research)
 
 ## PRP Generation
 
-Using PRPs/templates/prp_document_template.md as template:
+Using docs/templates/prp_document_template.md as template:
 
 ### Critical Context to Include and pass to the AI agent as part of the PRP
 
@@ -162,7 +162,7 @@ START WRITING THE PRP**
 
 ## Output
 
-Save as: `PRPs/{feature-name}.md`
+Save as: `docs/prps/{feature-name}.md`
 
 ## Quality Checklist
 
@@ -175,5 +175,28 @@ Save as: `PRPs/{feature-name}.md`
 Score the PRP on a scale of 1-10 (confidence level to succeed in one-pass
 implementation using claude codes)
 
+## Task Breakdown Generation
+
+**Final Step: Generate Implementation Tasks**
+
+After completing the PRP document, automatically generate a detailed task breakdown:
+
+1. **Task Decomposition** (Use subagent: `team-lead-task-breakdown`)
+   - Analyze the completed PRP document
+   - Break down the implementation into manageable development tasks
+   - Apply work breakdown structure (WBS) principles
+   - Create appropriately-sized tasks for team capacity
+   - Define clear dependencies and critical path
+   - Generate acceptance criteria using Given-When-Then format
+   - Save task breakdown to `docs/tasks/{feature-name}.md`
+
+2. **Integration with PRP**
+   - Reference the task breakdown document in the PRP
+   - Update PRP document to include link to `docs/tasks/{feature-name}.md`
+   - Ensure alignment between PRP requirements and task definitions
+   - Provide clear handoff to development team
+
+This ensures the PRP includes both comprehensive requirements AND actionable implementation tasks ready for development sprints.
+
 Remember: The goal is one-pass implementation success through comprehensive
-context.
+context AND clear task decomposition.

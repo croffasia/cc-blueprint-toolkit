@@ -1,4 +1,4 @@
-name: "Brainstorming Session Template v1.0.0 - Agile Feature Discovery & Planning"
+name: "Brainstorming Session Template v1.0.1 - Agile Feature Discovery & Planning"
 description: |
   
 ## Purpose
@@ -20,7 +20,6 @@ in software development teams using Scrum Master facilitation techniques.
 # Feature Brainstorming Session: [Feature Name]
 
 **Date:** [YYYY-MM-DD]  
-**Facilitator:** Claude (Scrum Master)  
 **Session Type:** [Feature Planning / Problem Solving / Technical Design / etc.]
 
 ## 1. Context & Problem Statement
@@ -121,20 +120,16 @@ in software development teams using Scrum Master facilitation techniques.
 
 ### Immediate Actions (This Week)
 - [ ] **[Specific Task 1]**
-  - **Owner:** [Name]
-  - **Due Date:** [YYYY-MM-DD]
   - **Dependencies:** [What needs to happen first]
   - **Success Criteria:** [How we'll know it's done]
 
 - [ ] **[Specific Task 2]**
-  - **Owner:** [Name]
-  - **Due Date:** [YYYY-MM-DD]
   - **Dependencies:** [What needs to happen first]
   - **Success Criteria:** [How we'll know it's done]
 
 ### Short-term Actions (Next Sprint)
-- [ ] **[Task 3]** - Owner: [Name] - Due: [Date]
-- [ ] **[Task 4]** - Owner: [Name] - Due: [Date]
+- [ ] **[Task 3]**
+- [ ] **[Task 4]**
 
 
 ## 6. Risks & Dependencies
@@ -144,26 +139,6 @@ in software development teams using Scrum Master facilitation techniques.
   - **Impact:** [High/Medium/Low]
   - **Probability:** [High/Medium/Low] 
   - **Mitigation Strategy:** [How we'll address it]
-  - **Owner:** [Responsible person]
-
-### Business Risks  
-- **Risk:** [Specific business challenge]
-  - **Impact:** [High/Medium/Low]
-  - **Probability:** [High/Medium/Low]
-  - **Mitigation Strategy:** [How we'll address it]
-  - **Owner:** [Responsible person]
-
-### External Dependencies
-- **Dependency:** [What we depend on from external teams/systems]
-  - **Impact on Timeline:** [How it affects our schedule]
-  - **Contact/Owner:** [Who to coordinate with]
-  - **Contingency Plan:** [What we do if this fails]
-
-### Internal Dependencies
-- **Dependency:** [What we need from internal teams/systems]
-  - **Impact on Timeline:** [How it affects our schedule]
-  - **Contact/Owner:** [Who to coordinate with]
-  - **Contingency Plan:** [What we do if this fails]
 
 ## 7. Resources & References
 

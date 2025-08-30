@@ -1,5 +1,5 @@
 ---
-name: prp-codebase-research
+name: codebase-research
 description: >
   Use proactively for PRP generation and codebase pattern analysis. Specialist
   for internal project analysis - discovering existing patterns, conventions,
@@ -76,7 +76,18 @@ When invoked, you must follow these steps:
    - Research application flow patterns and request handling approaches
    - Document data access patterns and API integration approaches
 
-8. **Technical Standards Documentation**
+8. **Testing Infrastructure Analysis** (when used for test documentation generation)
+   - Search for existing test files and testing patterns in the project
+   - Identify test directories structure (tests/, __tests__, spec/, test/)
+   - Analyze testing frameworks and libraries in use (Jest, Mocha, Pytest, etc.)
+   - Find test configuration files (jest.config.js, pytest.ini, etc.)
+   - Document test utilities, helpers, and custom matchers available
+   - Research mocking patterns and testing data fixtures used
+   - Analyze test execution scripts and CI/CD testing pipeline
+   - Find test coverage tools and reporting mechanisms
+   - Document integration testing and E2E testing setups if present
+
+9. **Technical Standards Documentation**
    - Analyze language configurations and usage patterns (TypeScript, etc.)
    - Research existing code design patterns and architectural standards
    - Identify quality implementations and non-functional requirements
@@ -117,6 +128,14 @@ Provide your final response organized as follows:
 - Migration and schema management approaches
 - Query patterns and data access layer architecture
 - Transaction and connection management strategies
+
+### 3.5. Testing Infrastructure (when used for test documentation)
+
+- Testing frameworks and libraries identified in the project
+- Test directory structure and file naming conventions
+- Available test utilities, helpers, and custom testing tools
+- Mocking strategies and test data fixture patterns
+- Test execution commands and CI/CD testing integration
 
 ### 4. Internal Documentation Summary
 

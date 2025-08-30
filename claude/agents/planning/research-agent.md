@@ -1,5 +1,5 @@
 ---
-name: prp-research-agent
+name: research-agent
 description: >
   Use proactively when generating PRPs or creating product requirements.
   Specialist for external research including business logic analysis, library
