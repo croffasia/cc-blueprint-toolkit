@@ -40,6 +40,22 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 
 ### How to Install
 
+**🚀 Easiest Way (Recommended)**
+
+Simply use this prompt in your Claude Code project:
+
+```
+Install Claude PRP Generator from https://github.com/croffasia/claude-code-prp-generator:
+1. Clone the repository
+2. Copy with replacement:
+    2.1 claude/commands/* to .claude/commands/ 
+    2.2 claude/agents/* to .claude/agents/
+    2.3 docs/templates/* to ./docs/templates/
+3. Study how all toolkit commands work and show me usage examples: /brainstorm, /prp:generate, /prp:execute, /task:execute
+```
+
+**📋 Manual Installation**
+
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/croffasia/claude-code-prp-generator.git
@@ -48,7 +64,7 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 
 2. **Copy Commands and Agents to Claude Code**
 
-   **Option A: Global Installation (Recommended)**
+   **Option A: Global Installation**
    ```bash
    # Copy commands and agents to your global Claude Code configuration
    cp -r claude/* ~/.claude/
