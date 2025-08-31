@@ -1,12 +1,12 @@
-# ⚡ Claude Autopilot
-> **Transform feature ideas into production code in 15 minutes**
+# 🏗️ Blueprint-Driven Claude Code Autopilot
+> **Smart preparation over endless iterations - AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes**
 
-[![GitHub stars](https://img.shields.io/github/stars/croffasia/claude-code-prp-generator?style=social)](https://github.com/croffasia/claude-code-prp-generator)
+[![GitHub stars](https://img.shields.io/github/stars/croffasia/cc-blueprint-toolkit?style=social)](https://github.com/croffasia/cc-blueprint-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
 
-Stop spending hours on features that should take minutes. One Claude Code command generates a complete implementation plan, another delivers production-ready code with tests.
+Blueprint-driven development: AI analyzes your codebase patterns, creates comprehensive implementation plans, then delivers production-ready code with tests. Smart preparation over endless iterations.
 
 ```bash
 /brainstorm Add user authentication with OAuth2
@@ -45,7 +45,7 @@ Stop spending hours on features that should take minutes. One Claude Code comman
 Simply use this prompt in your Claude Code project:
 
 ```
-Install Claude PRP Generator from https://github.com/croffasia/claude-code-prp-generator:
+Install Blueprint-Driven Claude Code Toolkit from https://github.com/croffasia/cc-blueprint-toolkit:
 1. Clone the repository
 2. Copy with replacement:
     2.1 claude/commands/* to .claude/commands/ 
@@ -58,8 +58,8 @@ Install Claude PRP Generator from https://github.com/croffasia/claude-code-prp-g
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/croffasia/claude-code-prp-generator.git
-   cd claude-code-prp-generator
+   git clone https://github.com/croffasia/cc-blueprint-toolkit.git
+   cd cc-blueprint-toolkit
    ```
 
 2. **Copy Commands and Agents to Claude Code**
@@ -159,7 +159,7 @@ Skip brainstorming when you have clear requirements:
 ## 📁 What's Included
 
 ```
-📦 claude-code-prp-generator/
+📦 cc-blueprint-toolkit/
 ├── 🤖 claude/agents/           # Smart research agents
 ├── ⚡ claude/commands/          # Claude Code Commands  
 └── 📚 docs/templates/          # Templates
@@ -195,7 +195,7 @@ If this toolkit saved you hours of development time, consider supporting with a 
 
 **Ready to stop wasting hours on features?** [Install now](#quick-start) and experience autonomous development! 🚀
 
-[![GitHub stars](https://img.shields.io/github/stars/croffasia/claude-code-prp-generator?style=social)](https://github.com/croffasia/claude-code-prp-generator)
+[![GitHub stars](https://img.shields.io/github/stars/croffasia/cc-blueprint-toolkit?style=social)](https://github.com/croffasia/cc-blueprint-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
