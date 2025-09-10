@@ -36,6 +36,18 @@ Blueprint-driven development: AI analyzes your codebase patterns, creates compre
 - **✅ Built-in Quality** - Validation gates and linting included automatically
 - **🚀 Any Tech Stack** - React, Python, Go, PHP - works everywhere
 
+## 🏆 PRO Version - Stop Wrestling with AI Code
+
+**The Problem:** AI generates code that works in demos but breaks in production. Missing tests, inconsistent patterns, no validation - sound familiar?
+
+**The Solution:** Production-ready foundation with **battle-tested patterns** that teach AI to write code like senior developers
+
+**👇 Early Access, lifetime access, unlimited projects**
+
+<a href="https://vibecodekit.dev">
+<img src="./public/vibecodekit-banner.png" alt="PRO Version" width="100%">
+</a>
+
 ## 🚀 Quick Start
 
 ### How to Install
@@ -83,6 +95,20 @@ Install Blueprint-Driven Claude Code Toolkit from https://github.com/croffasia/c
    cp -r /docs/* ./docs/
    ```
 
+## ⚙️ Model Configuration
+
+By default, all agents are configured to use **Claude Opus** for optimal planning quality. To use your default Claude Code model instead:
+
+1. Navigate to your installed agents directory (`.claude/agents/`)
+2. Edit any agent file (e.g., `preflight-prp.md`, `codebase-research.md`)
+3. Remove or comment out the `model: opus` line from the frontmatter
+
+```yaml
+# Remove this line to use your default model:
+# model: opus
+```
+
+> **Recommendation**: Keep Opus for planning agents (`preflight-prp`, `research-agent`) and use Sonnet for execution agents for best performance.
 
 ## 🎯 Commands
 
@@ -141,8 +167,6 @@ Skip brainstorming when you have clear requirements:
 - **External Research Agent** (`research-agent`) - Comprehensive external documentation and best practices research
 - **Team Lead Task Breakdown Agent** (`team-lead-task-breakdown`) - Breaks down PRP documents into manageable development tasks
 
-> **Note**: All agents are configured to use Opus for optimal planning quality. You can remove the `model: opus` line from agent files to use your default Claude Code model instead.
-
 ### ⚙️ Works With Everything
 - **Frontend**: React, Vue, Angular, Svelte
 - **Backend**: Node.js, Python, Go, PHP, Java
@@ -188,7 +212,7 @@ MIT License - Use freely in commercial projects
 If this toolkit saved you hours of development time, consider supporting with a crypto donation:
 
 - **USDT TRC-20**: `TMSdmfoEVkC4sA1ejmhimcZC4eSremmkjV`
-- **USDT Ton Network, TON**: `UQCqxsLGm8ftJvItaZaNrfE2o1RE2G2SV0FHP8pfXluXOAZv`
+- **USDT Ton Network, TON**: `UQBTE0qA7ZPKOkjbrCyqVopXFKNbbcDd-RcKeR9wkoyAjNb4`
 - **USDT ERC20**: `0x625d8E7e800E863d1b00D90c8937A10094D9380C`
 
 ---
