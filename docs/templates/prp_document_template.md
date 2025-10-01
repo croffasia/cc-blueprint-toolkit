@@ -1,21 +1,18 @@
-name: "Universal PRP Template v1.1.0 - Framework-Agnostic Implementation Guide"
+name: "Universal PRP Template v1.1.1 - Framework-Agnostic Implementation Guide"
 description: |
 
 ## Purpose
 
-Universal template optimized for AI agents to implement features across any tech
-stack with sufficient context and self-validation capabilities to achieve
-working code through iterative refinement.
+AI implementation template: complete context, validation commands, patterns to mirror. Framework-agnostic.
 
 ## Core Principles
 
-1. **Context is King**: Include ALL necessary documentation, examples, and
-   caveats
-2. **Validation Loops**: Provide executable tests/lints the AI can run and fix
-3. **Information Dense**: Use keywords and patterns from the codebase
-4. **Progressive Success**: Start simple, validate, then enhance
-5. **Framework Agnostic**: Adaptable to any language, framework, or architecture
-6. **Global rules**: Be sure to follow all rules in CLAUDE.md
+1. Include ALL necessary documentation, examples, and caveats
+2. Provide executable tests/lints the AI can run and fix
+3. Use keywords and patterns from the codebase
+4. Start simple, validate, then enhance
+5. Adaptable to any language, framework, or architecture
+6. Follow all rules in CLAUDE.md
 
 ---
 
@@ -100,12 +97,8 @@ working code through iterative refinement.
 
 ```[LANGUAGE]
 # CRITICAL: [Library name] requires [specific setup]
-# Example: React requires useEffect for side effects
-# Example: FastAPI requires async functions for endpoints
 # Example: This ORM doesn't support batch inserts over 1000 records
-# Example: Next.js App Router uses server components by default
 # Example: Express.js middleware order matters
-# Example: Vue 3 Composition API vs Options API patterns
 ```
 
 ## Implementation Blueprint
@@ -116,18 +109,8 @@ Create the core data models/types/interfaces to ensure type safety and
 consistency.
 
 ```[LANGUAGE]
-# Backend Examples:
- - Database models (ORM/ODM)
- - API schemas/DTOs
- - Validation schemas
- - Domain entities
-
-# Frontend Examples:
- - TypeScript interfaces/types
- - Component props types
- - API response types
- - Store/state types
- - Form validation schemas
+# Backend: Database models, API schemas/DTOs, validation schemas
+# Frontend: Component props types, API response types, store/state types
 ```
 
 ### list of tasks to be completed to fullfill the PRP in the order they should be completed
@@ -159,50 +142,14 @@ Task N:
 
 ```
 
-### Per task pseudocode as needed added to each task
+### Per task pseudocode as needed
 
 ```[LANGUAGE]
-# Task 1 - [Backend API Example]
 # Pseudocode with CRITICAL details - don't write entire code
-function/method new_feature(param: InputType) -> OutputType {
-    // PATTERN: Always validate input first (see [validation_file_path])
-    validated = validateInput(param);  // throws ValidationError
-
-    // GOTCHA: This library requires [specific_setup]
-    try {
-        // PATTERN: Use existing [pattern_name] (see [reference_file])
-        result = await [service/api].call(validated);
-
-        // CRITICAL: [Important constraint/rate limit/etc]
-        // PATTERN: Standardized response format
-        return formatResponse(result);  // see [response_utils_path]
-    } catch (error) {
-        // PATTERN: Error handling (see [error_handler_path])
-        return handleError(error);
-    }
-}
-
-# Task 1 - [Frontend Component Example]
-# Component structure with CRITICAL details
-function NewFeatureComponent({ props }: Props) {
-    // PATTERN: State management (see [existing_component_path])
-    const [state, setState] = useState(initialState);
-
-    // PATTERN: Side effects (see [hooks_path])
-    useEffect(() => {
-        // GOTCHA: [Cleanup/dependency specific detail]
-        // CRITICAL: [Performance/render constraint]
-    }, [dependencies]);
-
-    // PATTERN: Event handlers (see [handlers_path])
-    const handleAction = useCallback(() => {
-        // PATTERN: Error boundaries (see [error_boundary_path])
-    }, [dependencies]);
-
-    return (
-        // PATTERN: Component structure (see [similar_component])
-        // CRITICAL: Accessibility/styling constraints
-    );
+function new_feature(param: InputType) -> OutputType {
+    // PATTERN: [Pattern to follow] (see [reference_file:line])
+    // GOTCHA: [Library/framework quirk]
+    // CRITICAL: [Important constraint]
 }
 ```
 

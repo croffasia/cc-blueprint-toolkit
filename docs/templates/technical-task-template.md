@@ -1,9 +1,9 @@
-name: "Technical Task Template v1.0.0 - AI-Optimized Development Task Specification"
+name: "Technical Task Template v1.0.1 - Development Task Specification"
 description: |
 
 # Technical Task Template
 
-> **Purpose**: Comprehensive template for AI-optimized technical task descriptions that provide maximum context for development teams and AI coding assistants.
+> **Purpose**: Task specification: complete context, requirements, acceptance criteria, validation commands.
 
 ## Task Identification
 
@@ -114,12 +114,6 @@ Scenario 3: [Edge case]
 - [ ] **Mobile**: [Works on mobile devices if applicable]
 - [ ] **Accessibility**: [Meets accessibility standards]
 
-## Manual Testing Steps
-1. **Setup**: [How to prepare test environment]
-2. **Test Case 1**: [Step-by-step testing instructions]
-3. **Test Case 2**: [Additional scenarios to verify]
-4. **Cleanup**: [How to clean up after testing]
-
 ## Validation & Quality Gates
 
 ### Code Quality Checks
@@ -153,14 +147,5 @@ Scenario 3: [Edge case]
 ### Additional Context
 [Any additional information that doesn't fit other sections but is important for implementation]
 
-### Questions for Clarification
-- [ ] **Question 1**: [Specific question needing answer]
-- [ ] **Question 2**: [Another clarification needed]
-
 ### Implementation Notes
 [Developer notes, gotchas, or special considerations during implementation]
-
----
-
-**Template Version**: 1.0  
-**Last Updated**: [Date]

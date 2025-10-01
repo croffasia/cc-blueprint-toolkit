@@ -8,26 +8,13 @@ allowed-tools: TodoWrite, Read, Write, Glob, Grep, Bash, Task, WebSearch, WebFet
 
 ## Feature file: $ARGUMENTS
 
-Generate a complete PRP (Product Requirements & Plans) for general feature
-implementation with thorough research. This workflow includes an initial
-discovery phase to validate task completeness before comprehensive research
-begins.
+Generate PRP (Product Requirements & Plans) through validated research and codebase analysis.
 
 ## Workflow Summary
 
-- Phase 1 discovery identifies missing business logic early
-- Two-phase approach ensures complete requirements before development
-- Better input quality leads to higher-quality PRP outputs
+Two-phase approach: validate completeness (Phase 1), then research (Phase 2).
 
-Ensure context is passed to the AI agent to enable self-validation and iterative
-refinement. Read the feature file first to understand what needs to be created,
-how the examples provided help, and any other considerations.
-
-The AI agent only gets the context you are appending to the PRP and training
-data. Assume the AI agent has access to the codebase and the same knowledge
-cutoff as you, so it's important that your research findings are included or
-referenced in the PRP. The Agent has Websearch capabilities, so pass urls to
-documentation and examples.
+**CRITICAL**: PRP must contain ALL context - research findings, documentation URLs, code examples. The executor agent sees only the final PRP document, not your research process.
 
 ## Research Process
 

@@ -24,7 +24,6 @@ Implement a specific development task using the detailed task specification.
     - Review Given-When-Then acceptance criteria scenarios
     - Study referenced code patterns and file locations
     - Understand integration points and dependencies
-    - Note manual testing requirements
 
 3. **Implementation Planning**
     - Use TodoWrite tool to create focused implementation plan
@@ -43,7 +42,6 @@ Implement a specific development task using the detailed task specification.
 5. **Acceptance Criteria Validation**
     - Execute each Given-When-Then scenario manually
     - Verify rule-based criteria checklist completion
-    - Run manual testing steps as specified in task document
     - Execute validation commands specified in task
 
 6. **Quality Gates**
@@ -65,6 +63,5 @@ Implement a specific development task using the detailed task specification.
 - Test incrementally as you build each component
 - Follow the exact file structure specified in task document
 - Verify dependencies are satisfied before starting
-- Complete manual testing steps thoroughly
 
 Note: For complex tasks with multiple dependencies, ensure prerequisite tasks are completed first or coordinate with team members.

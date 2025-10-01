@@ -1,3 +1,12 @@
+<a href="https://vibecodekit.dev">
+<img src="./public/vibecodekit-banner.png" alt="PRO Version" width="100%">
+</a>
+
+<p align="center">
+<strong>🏆 Need advanced features?</strong> Check out the PRO version with early access and lifetime license<br>
+→ <a href="https://vibecodekit.dev">vibecodekit.dev</a>
+</p>
+
 # 🏗️ Blueprint-Driven Claude Code Autopilot
 > **Smart preparation over endless iterations - AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes**
 
@@ -35,18 +44,6 @@ Blueprint-driven development: AI analyzes your codebase patterns, creates compre
 - **🧠 Opus-Powered Planning** - Deep research and smart blueprints, Sonnet-fast execution
 - **✅ Built-in Quality** - Validation gates and linting included automatically
 - **🚀 Any Tech Stack** - React, Python, Go, PHP - works everywhere
-
-## 🏆 PRO Version - Stop Wrestling with AI Code
-
-**The Problem:** AI generates code that works in demos but breaks in production. Missing tests, inconsistent patterns, no validation - sound familiar?
-
-**The Solution:** Production-ready foundation with **battle-tested patterns** that teach AI to write code like senior developers
-
-**👇 Early Access, lifetime access, unlimited projects**
-
-<a href="https://vibecodekit.dev">
-<img src="./public/vibecodekit-banner.png" alt="PRO Version" width="100%">
-</a>
 
 ## 🚀 Quick Start
 
@@ -224,4 +221,4 @@ If this toolkit saved you hours of development time, consider supporting with a 
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
 
-**v1.3.0** | *Updated: August 30, 2025*
+**v1.3.1** | *Updated: August 30, 2025*
