@@ -41,7 +41,7 @@ Blueprint-driven development: AI analyzes your codebase patterns, creates compre
 
 - **⚡ 10x Faster Development** - Feature idea to production in one session
 - **🎯 Zero "Vibe Coding"** - AI follows your exact patterns and conventions
-- **🧠 Opus-Powered Planning** - Deep research and smart blueprints, Sonnet-fast execution
+- **🧠 Smart Planning** - Deep research and comprehensive blueprints with flexible model selection
 - **✅ Built-in Quality** - Validation gates and linting included automatically
 - **🚀 Any Tech Stack** - React, Python, Go, PHP - works everywhere
 
@@ -92,20 +92,35 @@ Install Blueprint-Driven Claude Code Toolkit from https://github.com/croffasia/c
    cp -r /docs/* ./docs/
    ```
 
-## ⚙️ Model Configuration
+## ⚙️ Configuration
 
-By default, all agents are configured to use **Claude Opus** for optimal planning quality. To use your default Claude Code model instead:
+### Model Selection
 
-1. Navigate to your installed agents directory (`.claude/agents/`)
-2. Edit any agent file (e.g., `preflight-prp.md`, `codebase-research.md`)
-3. Remove or comment out the `model: opus` line from the frontmatter
+All agents use your default Claude Code model. To assign specific agents to **Claude Opus**:
+
+1. Navigate to your agents directory (`.claude/agents/`)
+2. Edit the agent file (e.g., `preflight-prp.md`, `codebase-research.md`)
+3. Add `model: opus` to the frontmatter
 
 ```yaml
-# Remove this line to use your default model:
-# model: opus
+---
+name: preflight-prp
+model: opus
+---
 ```
 
-> **Recommendation**: Keep Opus for planning agents (`preflight-prp`, `research-agent`) and use Sonnet for execution agents for best performance.
+> **Note**: With Sonnet 4.5, Opus is no longer necessary for most use cases. Use your default model for best speed and cost efficiency.
+
+### Recommended MCP Servers
+
+Copy `.mcp.json` to your project root for enhanced development capabilities:
+
+- **Context7** - Intelligent codebase context and documentation
+- **Playwright** - Browser automation for testing and screenshots
+
+```bash
+cp .mcp.json /path/to/your/project/
+```
 
 ## 🎯 Commands
 
@@ -134,8 +149,6 @@ By default, all agents are configured to use **Claude Opus** for optimal plannin
 - Perfect for large implementations
 - Systematic progress tracking
 
-> **Smart Model Selection**: Opus handles complex planning and research, Sonnet executes fast implementation - best of both worlds!
-
 ## 🎯 How It Works
 
 ### 🧠 Full Feature Development Flow
@@ -158,12 +171,6 @@ Skip brainstorming when you have clear requirements:
 
 ## 💎 What You Get
 
-### 🤖 Specialized AI Agents
-- **Preflight PRP Agent** (`preflight-prp`) - Validates task completeness and identifies missing business logic
-- **Codebase Research Agent** (`codebase-research`) - Deep pattern discovery and internal architecture analysis
-- **External Research Agent** (`research-agent`) - Comprehensive external documentation and best practices research
-- **Team Lead Task Breakdown Agent** (`team-lead-task-breakdown`) - Breaks down PRP documents into manageable development tasks
-
 ### ⚙️ Works With Everything
 - **Frontend**: React, Vue, Angular, Svelte
 - **Backend**: Node.js, Python, Go, PHP, Java
@@ -182,8 +189,10 @@ Skip brainstorming when you have clear requirements:
 ```
 📦 cc-blueprint-toolkit/
 ├── 🤖 claude/agents/           # Smart research agents
-├── ⚡ claude/commands/          # Claude Code Commands  
-└── 📚 docs/templates/          # Templates
+├── ⚡ claude/commands/          # Claude Code Commands
+├── 📚 docs/templates/          # Templates
+└── 📖 docs/                    # Documentation & guides
+    └── vibe-coding-guide.md    # 10 essential tips for AI-powered development
 ```
 
 ## 🎯 Perfect For
@@ -193,16 +202,16 @@ Skip brainstorming when you have clear requirements:
 - **Startups** - Ship features 10x faster with structured planning
 - **Large Teams** - Maintain consistency across developers
 
+## 📖 Learning Resources
+
+- **[Vibe Coding Guide](docs/vibe-coding-guide.md)** - 10 essential tips for building projects with AI assistance
+
 ## 🤝 Join the Community
 
 - ⭐ **Star this repo** if it saves you hours
 - 🍴 **Fork** to customize for your stack
 - 💬 **Issues** for questions and feature requests
 - 🔄 **PRs welcome** for new agents and improvements
-
-## 📄 License
-
-MIT License - Use freely in commercial projects
 
 ## 💝 Support the Project
 
@@ -211,6 +220,10 @@ If this toolkit saved you hours of development time, consider supporting with a 
 - **USDT TRC-20**: `TMSdmfoEVkC4sA1ejmhimcZC4eSremmkjV`
 - **USDT Ton Network, TON**: `UQBTE0qA7ZPKOkjbrCyqVopXFKNbbcDd-RcKeR9wkoyAjNb4`
 - **USDT ERC20**: `0x625d8E7e800E863d1b00D90c8937A10094D9380C`
+
+## 📄 License
+
+MIT License - Use freely in commercial projects
 
 ---
 
@@ -221,4 +234,4 @@ If this toolkit saved you hours of development time, consider supporting with a 
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
 
-**v1.3.1** | *Updated: August 30, 2025*
+**v1.3.2** | *Updated: October 7, 2025*

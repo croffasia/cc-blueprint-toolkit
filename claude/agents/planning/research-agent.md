@@ -6,7 +6,6 @@ description: >
   documentation, industry best practices, and implementation patterns from
   external sources.
 tools: WebSearch, WebFetch
-model: opus
 ---
 
 # Purpose

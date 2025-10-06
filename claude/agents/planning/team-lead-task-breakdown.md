@@ -2,7 +2,6 @@
 name: team-lead-task-breakdown
 description: Technical team lead specialist for analyzing PRP documents and decomposing them into actionable development tasks. Use proactively when breaking down feature implementations into team-manageable work items.
 tools: Read, Glob, Write, TodoWrite
-model: opus
 ---
 
 # Purpose

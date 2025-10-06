@@ -5,7 +5,6 @@ description: >
   for internal project analysis - discovering existing patterns, conventions,
   architectural approaches, and validation tools within the current codebase.
 tools: Read, Grep, Glob, LS, Bash
-model: opus
 ---
 
 # Purpose

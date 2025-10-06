@@ -5,7 +5,6 @@ description: >
   preflight checks to validate task completeness by identifying missing
   business logic and requirements gaps before comprehensive research begins.
 tools: Read, Grep, Glob, LS, Bash
-model: opus
 ---
 
 # Purpose
