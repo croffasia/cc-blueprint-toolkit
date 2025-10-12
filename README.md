@@ -58,7 +58,11 @@ Blueprint-driven development plugin: AI analyzes your codebase patterns, creates
 
 In Claude Code console, run:
 ```bash
+# Short format
 /plugin marketplace add croffasia/cc-blueprint-toolkit
+
+# Or full URL
+/plugin marketplace add https://github.com/croffasia/cc-blueprint-toolkit.git
 ```
 
 **Step 2: Initialize Templates**
