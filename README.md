@@ -8,27 +8,32 @@
 </p>
 
 # 🏗️ Blueprint-Driven Claude Code Autopilot
-> **Smart preparation over endless iterations - AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes**
+> **Claude Code Plugin for smart blueprint-driven development**
+>
+> AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes
 
 [![GitHub stars](https://img.shields.io/github/stars/croffasia/cc-blueprint-toolkit?style=social)](https://github.com/croffasia/cc-blueprint-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
 
-Blueprint-driven development: AI analyzes your codebase patterns, creates comprehensive implementation plans, then delivers production-ready code with tests. Smart preparation over endless iterations.
+Blueprint-driven development plugin: AI analyzes your codebase patterns, creates comprehensive implementation plans, then delivers production-ready code with tests. Smart preparation over endless iterations.
 
 ```bash
-/brainstorm Add user authentication with OAuth2
+/bp:init
+# → Automatically installs/updates templates in your project → docs/templates/*
+
+/bp:brainstorm Add user authentication with OAuth2
 # → Smart feature planning session → docs/brainstorming/2025-08-22-user-auth.md
 
-/prp:generate @docs/brainstorming/2025-08-22-user-auth.md
+/bp:generate:prp @docs/brainstorming/2025-08-22-user-auth.md
 # OR directly: /prp:generate Add user authentication with OAuth2
 # → Complete implementation blueprint → docs/prps/user-auth.md
 
-/prp:execute @docs/prps/user-auth.md  
+/bp:execute:prp @docs/prps/user-auth.md
 # → Working auth system (direct PRP execution for simple features)
 
-/task:execute @docs/tasks/user-auth.md
+/bp:execute:task @docs/tasks/user-auth.md
 # → Execute all tasks from breakdown (for complex features)
 ```
 
@@ -37,113 +42,56 @@ Blueprint-driven development: AI analyzes your codebase patterns, creates compre
 
 > ⭐ **Found this helpful? Star the repo and hit Watch** to get notified of new updates!
 
-## 🔥 Why Developers Love It
+## ❤️ Why Developers Love It
 
-- **⚡ 10x Faster Development** - Feature idea to production in one session
-- **🎯 Zero "Vibe Coding"** - AI follows your exact patterns and conventions
-- **🧠 Smart Planning** - Deep research and comprehensive blueprints with flexible model selection
-- **✅ Built-in Quality** - Validation gates and linting included automatically
-- **🚀 Any Tech Stack** - React, Python, Go, PHP - works everywhere
+- **10x Faster Development** - Feature idea to production in one session
+- **Zero "Vibe Coding"** - AI follows your exact patterns and conventions
+- **Smart Research** - Finds patterns in your codebase or searches dev resources for best practices when needed
+- **Auto Task Breakdown** - Complex features automatically split into manageable step-by-step tasks
+- **Any Tech Stack** - React, Python, Go, PHP - works everywhere
 
 ## 🚀 Quick Start
 
-### How to Install
+### Installation (2 simple steps)
 
-**🚀 Easiest Way (Recommended)**
+**Step 1: Install Plugin**
 
-Simply use this prompt in your Claude Code project:
-
-```
-Install Blueprint-Driven Claude Code Toolkit from https://github.com/croffasia/cc-blueprint-toolkit:
-1. Clone the repository
-2. Copy with replacement:
-    2.1 claude/commands/* to .claude/commands/ 
-    2.2 claude/agents/* to .claude/agents/
-    2.3 docs/templates/* to ./docs/templates/
-3. Study how all toolkit commands work and show me usage examples: /brainstorm, /prp:generate, /prp:execute, /task:execute
-```
-
-**📋 Manual Installation**
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/croffasia/cc-blueprint-toolkit.git
-   cd cc-blueprint-toolkit
-   ```
-
-2. **Copy Commands and Agents to Claude Code**
-
-   **Option A: Global Installation**
-   ```bash
-   # Copy commands and agents to your global Claude Code configuration
-   cp -r claude/* ~/.claude/
-   ```
-
-   **Option B: Project-Specific Installation**
-   ```bash
-   # Copy commands and agents to your project's .claude directory
-   cp -r claude/* .claude/
-   ```
-
-3. **Copy Templates to Your Project**
-   ```bash
-   # In your target project directory
-   cp -r /docs/* ./docs/
-   cp -r /docs/* ./docs/
-   ```
-
-## ⚙️ Configuration
-
-### Model Selection
-
-All agents use your default Claude Code model. To assign specific agents to **Claude Opus**:
-
-1. Navigate to your agents directory (`.claude/agents/`)
-2. Edit the agent file (e.g., `preflight-prp.md`, `codebase-research.md`)
-3. Add `model: opus` to the frontmatter
-
-```yaml
----
-name: preflight-prp
-model: opus
----
-```
-
-> **Note**: With Sonnet 4.5, Opus is no longer necessary for most use cases. Use your default model for best speed and cost efficiency.
-
-### Recommended MCP Servers
-
-Copy `.mcp.json` to your project root for enhanced development capabilities:
-
-- **Context7** - Intelligent codebase context and documentation
-- **Playwright** - Browser automation for testing and screenshots
-
+In Claude Code console, run:
 ```bash
-cp .mcp.json /path/to/your/project/
+/plugin marketplace add croffasia/cc-blueprint-toolkit
 ```
+
+**Step 2: Initialize Templates**
+
+In your project directory, run once:
+```bash
+/bp:init
+```
+
+This will automatically install documentation templates to your project, enabling the full Blueprint workflow.
 
 ## 🎯 Commands
 
-### 1. **Think Through Your Feature** (`/brainstorm`)
+### 1. **Think Through Your Feature** (`/bp:brainstorm`)
 - Smart AI Scrum Master guides you through structured planning
 - Asks the right questions to uncover hidden requirements
 - Creates comprehensive feature documentation → `docs/brainstorming/feature-session.md`
 - Perfect for solo developers who need a thinking partner
 
-### 2. **Create Perfect Plan** (`/prp:generate`)
+### 2. **Create Perfect Plan** (`/bp:generate:prp`)
 - Validates your request is complete (may ask clarifying questions)
 - Studies your codebase patterns
 - Researches external docs if needed
 - Creates detailed implementation plan → `docs/prps/feature-name.md`
 - Breaks down into technical tasks → `docs/tasks/feature-name.md`
 
-### 3. **Execute the Plan** (`/prp:execute`)
+### 3. **Execute the Plan** (`/bp:execute:prp`)
 - Follows your patterns exactly
 - Writes production-ready code
 - Runs tests and linting
 - Validates everything works
 
-### 4. **Execute Tasks** (`/task:execute`)
+### 4. **Execute Tasks** (`/bp:execute:task`)
 - Breaks down complex features into manageable tasks
 - Executes task-by-task with validation
 - Perfect for large implementations
@@ -152,22 +100,22 @@ cp .mcp.json /path/to/your/project/
 ## 🎯 How It Works
 
 ### 🧠 Full Feature Development Flow
-**brainstorm → prp:generate → execute**
+**brainstorm → generate prp → execute**
 
-1. **Start with Ideas** - Use `/brainstorm` when you need to explore and refine feature concepts
-2. **Generate Implementation Plan** - Use `/prp:generate` to create detailed technical specifications  
+1. **Start with Ideas** - Use `/bp:brainstorm` when you need to explore and refine feature concepts
+2. **Generate Implementation Plan** - Use `/bp:generate:prp` to create detailed technical specifications  
 3. **Choose Your Execution Path**:
-   - **Simple Features**: `/prp:execute` - Direct implementation for straightforward tasks
-   - **Complex Features**: `/task:execute` - Step-by-step implementation with progress tracking
+   - **Simple Features**: `/bp:execute:prp` - Direct implementation for straightforward tasks
+   - **Complex Features**: `/bp:execute:task` - Step-by-step implementation with progress tracking
 
 ### 🚀 Quick Implementation Flow
-**prp:generate → execute**
+**generate prp → execute**
 
 Skip brainstorming when you have clear requirements:
-1. **Generate Plan**: `/prp:generate`
-2. **Execute**: Choose `/prp:execute` for simple features or `/task:execute` for complex ones
+1. **Generate Plan**: `/bp:generate:prp`
+2. **Execute**: Choose `/bp:execute:prp` for simple features or `/bp:execute:task` for complex ones
 
-> **Pro Tip**: Use `/task:execute` for higher quality first-pass implementations on complex features
+> **Pro Tip**: Use `/bp:execute:task` for higher quality first-pass implementations on complex features
 
 ## 💎 What You Get
 
@@ -188,17 +136,16 @@ Skip brainstorming when you have clear requirements:
 
 ```
 📦 cc-blueprint-toolkit/
-├── 🤖 claude/agents/           # Smart research agents
-├── ⚡ claude/commands/          # Claude Code Commands
-├── 📚 docs/templates/          # Templates
-└── 📖 docs/                    # Documentation & guides
-    └── vibe-coding-guide.md    # 10 essential tips for AI-powered development
+├── claude/agents/            # Smart research agents
+├── claude/commands/          # Claude Code Commands
+├── docs/templates/           # Templates
+└── docs/                     # Documentation & guides
+    └── vibe-coding-guide.md  # 10 essential tips for AI-powered development
 ```
 
 ## 🎯 Perfect For
 
 - **Solo Developers** - Get team-level productivity + AI thinking partner for feature planning
-- **Agencies** - Handle diverse client projects efficiently
 - **Startups** - Ship features 10x faster with structured planning
 - **Large Teams** - Maintain consistency across developers
 
@@ -206,20 +153,35 @@ Skip brainstorming when you have clear requirements:
 
 - **[Vibe Coding Guide](docs/vibe-coding-guide.md)** - 10 essential tips for building projects with AI assistance
 
+## 🏆 Upgrade to PRO
+
+Want production-ready setup with zero configuration?
+
+### **[Vibe Code Kit PRO](https://vibecodekit.dev)** - Early Access with Lifetime License
+
+**What's included:**
+
+- **Enhanced PRP Workflow** - Optimized blueprint generation with smarter context handling
+- **Smart CLAUDE.md** - Pre-configured with lightweight workflow for routine tasks
+- **Context-Aware AI Rules** - Automatically loads relevant rules based on your task
+  - Working with styles? Style guidelines and CSS libraries rules auto-loaded
+  - API development? Backend patterns and security rules activated
+  - Smart context detection eliminates rule overload
+  - Modular system lets you customize rules to fit your exact needs
+- **Standards Compliance Agent** - Validates code quality and best practices after task completion
+- **Professional Vue 3 Starter Kit** - Senior-grade template with Claude Code development rules
+  - Pre-configured: ESLint, Prettier, Stylelint, TypeScript, Husky, Docker
+  - Zero setup required - works from day one
+  - Deploy anywhere instantly
+
+**Perfect for teams and professionals who want enterprise-grade AI development tools without the setup hassle.**
+
 ## 🤝 Join the Community
 
 - ⭐ **Star this repo** if it saves you hours
 - 🍴 **Fork** to customize for your stack
 - 💬 **Issues** for questions and feature requests
 - 🔄 **PRs welcome** for new agents and improvements
-
-## 💝 Support the Project
-
-If this toolkit saved you hours of development time, consider supporting with a crypto donation:
-
-- **USDT TRC-20**: `TMSdmfoEVkC4sA1ejmhimcZC4eSremmkjV`
-- **USDT Ton Network, TON**: `UQBTE0qA7ZPKOkjbrCyqVopXFKNbbcDd-RcKeR9wkoyAjNb4`
-- **USDT ERC20**: `0x625d8E7e800E863d1b00D90c8937A10094D9380C`
 
 ## 📄 License
 
@@ -234,4 +196,4 @@ MIT License - Use freely in commercial projects
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
 
-**v1.3.2** | *Updated: October 7, 2025*
+**v1.4.0** | *Updated: October 12, 2025*

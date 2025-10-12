@@ -21,7 +21,7 @@ Two-phase approach: validate completeness (Phase 1), then research (Phase 2).
 **Phase 1: Initial Discovery & Task Validation** (Validate task completeness
 before deep research)
 
-1. **Preflight Analysis** (Use subagent: `preflight-prp`)
+1. **Preflight Analysis** (Use subagent: `bp:preflight-prp`)
    - Quick scan of project structure for similar features/patterns
    - Analyze user's task description for business logic completeness
    - Identify gaps in user requirements and missing business logic details:
@@ -37,8 +37,8 @@ before deep research)
    - Make proceed/clarify recommendation with clear reasoning
 
 2. **Decision Gate**:
-   - **IF** preflight-prp recommends PROCEED → Continue to Phase 2
-   - **IF** preflight-prp identifies gaps → Stop and ask clarifying
+   - **IF** bp:preflight-prp recommends PROCEED → Continue to Phase 2
+   - **IF** bp:preflight-prp identifies gaps → Stop and ask clarifying
      questions
    - **ONLY** continue to comprehensive research after user provides missing
      details
@@ -47,7 +47,7 @@ before deep research)
 **Phase 2: Comprehensive Research Phase** (After task validation - Codebase
 first, then smart external research)
 
-1. **Codebase Analysis** (Use subagent: `codebase-research`)
+1. **Codebase Analysis** (Use subagent: `bp:codebase-research`)
    - Search for similar features/patterns in the codebase
    - Identify files to reference in PRP
    - Note existing conventions to follow
@@ -77,7 +77,7 @@ first, then smart external research)
    - ❌ **No similar patterns/components found in codebase** (need external
      examples)
 
-   **If External Research is needed** (Use subagent: `research-agent`):
+   **If External Research is needed** (Use subagent: `bp:research-agent`):
    - Focus ONLY on missing knowledge gaps identified above
    - External npm/library documentation for NEW packages or complex features
    - Best practices for COMPLEX patterns not in codebase
@@ -106,46 +106,15 @@ first, then smart external research)
 
 ## PRP Generation
 
-Using docs/templates/prp_document_template.md as template:
+**IMPORTANT**: Read and follow the template structure from `docs/templates/prp_document_template.md` exactly.
 
-### Critical Context to Include and pass to the AI agent as part of the PRP
+If template doesn't exist, tell user to run `/bp:init` first to install templates.
 
-- **Discovery Findings**: Document Phase 1 findings and any user clarifications
-  received
-- **Business Logic**: Complete requirements gathered from user interactions
-- **Code Examples**: Real snippets from codebase (PRIMARY FOCUS)
-- **Patterns**: Existing approaches to follow (MIRROR THESE)
-- **Documentation**: URLs ONLY for new/missing knowledge gaps
-- **Research Integration**: All external research findings are provided directly in agent response context for immediate integration into PRP
-- **Gotchas**: Library quirks, version issues from codebase analysis
-- **Research Justification**: Explain why external research was/wasn't needed
-
-### Implementation Blueprint
-
-- Start with pseudocode showing approach
-- Reference real files for patterns
-- Include error handling strategy
-- list tasks to be completed to fullfill the PRP in the order they should be
-  completed
-
-### Validation Gates (Must be Executable)
-
-**During Codebase Research Phase**, identify and document available project
-validation tools:
-
-- Analyze project configuration files for validation commands (package.json,
-  Makefile, pyproject.toml, setup.py, Cargo.toml, go.mod, etc.)
-- Identify linting, testing, and formatting tools specific to the project's tech
-  stack
-- Document exact validation commands found in the project
-- Include these validation commands directly in the PRP document
-- Ensure all code changes will pass project validation standards
-- Add specific validation steps to PRP task list with exact commands to run
-
-**CRITICAL AFTER YOU ARE DONE RESEARCHING AND EXPLORING THE CODEBASE BEFORE YOU
-START WRITING THE PRP**
-
-**ULTRATHINK ABOUT THE PRP AND PLAN YOUR APPROACH THEN START WRITING THE PRP**
+**CRITICAL BEFORE WRITING**:
+1. Complete all research phases (Phase 1 and Phase 2)
+2. Gather ALL context from codebase analysis
+3. Document validation commands from project config files
+4. THEN write the PRP following the template structure
 
 ## Output
 
@@ -168,7 +137,7 @@ implementation using claude codes)
 
 After completing the PRP document, automatically generate a detailed task breakdown:
 
-1. **Task Decomposition** (Use subagent: `team-lead-task-breakdown`)
+1. **Task Decomposition** (Use subagent: `bp:team-lead-task-breakdown`)
    - Analyze the completed PRP document
    - Break down the implementation into manageable development tasks
    - Apply work breakdown structure (WBS) principles
