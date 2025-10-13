@@ -4,7 +4,8 @@
 
 <p align="center">
 <strong>🏆 Need advanced features?</strong> Check out the PRO version with early access and lifetime license<br>
-→ <a href="https://vibecodekit.dev">vibecodekit.dev</a>
+→ <a href="https://vibecodekit.dev">vibecodekit.dev</a><br>
+<strong>💎 Use code <code>CCBLUEPRINT</code> for 10% OFF</strong>
 </p>
 
 # 🏗️ Blueprint-Driven Claude Code Autopilot
@@ -162,6 +163,8 @@ Skip brainstorming when you have clear requirements:
 Want production-ready setup with zero configuration?
 
 ### **[Vibe Code Kit PRO](https://vibecodekit.dev)** - Early Access with Lifetime License
+
+💎 **Use code `CCBLUEPRINT` for 10% OFF**
 
 **What's included:**
 
