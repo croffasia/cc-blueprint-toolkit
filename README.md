@@ -162,6 +162,8 @@ Skip brainstorming when you have clear requirements:
 
 Want production-ready setup with zero configuration?
 
+[![Watch Demo](./public/vibecodekit-banner-youtube.png)](https://www.youtube.com/watch?v=eBMNLzb_w4Q)
+
 ### **[Vibe Code Kit PRO](https://vibecodekit.dev)** - Early Access with Lifetime License
 
 💎 **Use code `CCBLUEPRINT` for 10% OFF**
