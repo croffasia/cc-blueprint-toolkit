@@ -10,7 +10,7 @@
       "source": "./",
       "name": "bp",
       "description": "Blueprint-driven Claude Code autopilot. Smart preparation over endless iterations - AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes.",
-      "version": "1.3.2"
+      "version": "1.3.3"
     }
   ]
 }
