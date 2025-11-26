@@ -1,7 +1,7 @@
 {
   "name": "bp",
   "description": "Blueprint-driven Claude Code autopilot. Smart preparation over endless iterations - AI analyzes patterns, creates solid implementation plans, delivers working code in 15 minutes.",
-  "version": "1.3.3",
+  "version": "1.4.1",
   "author": {
     "name": "Croffasia",
     "email": "support@vibecodekit.dev",
@@ -12,9 +12,9 @@
   "license": "MIT",
   "keywords": ["prp", "blueprint", "planning", "automation", "architecture", "patterns", "agents"],
   "commands": [
-    "./claude/commands/execute:prp.md",
-    "./claude/commands/generate:prp.md",
-    "./claude/commands/execute:task.md",
+    "./claude/commands/execute-prp.md",
+    "./claude/commands/generate-prp.md",
+    "./claude/commands/execute-task.md",
     "./claude/commands/init.md",
     "./claude/commands/brainstorm.md"
   ],

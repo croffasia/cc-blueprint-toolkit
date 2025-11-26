@@ -27,14 +27,14 @@ Blueprint-driven development plugin: AI analyzes your codebase patterns, creates
 /bp:brainstorm Add user authentication with OAuth2
 # → Smart feature planning session → docs/brainstorming/2025-08-22-user-auth.md
 
-/bp:generate:prp @docs/brainstorming/2025-08-22-user-auth.md
+/bp:generate-prp @docs/brainstorming/2025-08-22-user-auth.md
 # OR directly: /prp:generate Add user authentication with OAuth2
 # → Complete implementation blueprint → docs/prps/user-auth.md
 
-/bp:execute:prp @docs/prps/user-auth.md
+/bp:execute-prp @docs/prps/user-auth.md
 # → Working auth system (direct PRP execution for simple features)
 
-/bp:execute:task @docs/tasks/user-auth.md
+/bp:execute-task @docs/tasks/user-auth.md
 # → Execute all tasks from breakdown (for complex features)
 ```
 
@@ -53,9 +53,9 @@ Blueprint-driven development plugin: AI analyzes your codebase patterns, creates
 
 ## 🚀 Quick Start
 
-### Installation (2 simple steps)
+### Installation (3 simple steps)
 
-**Step 1: Install Plugin**
+**Step 1: Add Plugin from Marketplace**
 
 In Claude Code console, run:
 ```bash
@@ -66,7 +66,15 @@ In Claude Code console, run:
 /plugin marketplace add https://github.com/croffasia/cc-blueprint-toolkit.git
 ```
 
-**Step 2: Initialize Templates**
+**Step 2: Install Plugin**
+
+```bash
+/plugin install bp
+```
+
+Then restart Claude Code to load the plugin.
+
+**Step 3: Initialize Templates**
 
 In your project directory, run once:
 ```bash
@@ -83,20 +91,20 @@ This will automatically install documentation templates to your project, enablin
 - Creates comprehensive feature documentation → `docs/brainstorming/feature-session.md`
 - Perfect for solo developers who need a thinking partner
 
-### 2. **Create Perfect Plan** (`/bp:generate:prp`)
+### 2. **Create Perfect Plan** (`/bp:generate-prp`)
 - Validates your request is complete (may ask clarifying questions)
 - Studies your codebase patterns
 - Researches external docs if needed
 - Creates detailed implementation plan → `docs/prps/feature-name.md`
 - Breaks down into technical tasks → `docs/tasks/feature-name.md`
 
-### 3. **Execute the Plan** (`/bp:execute:prp`)
+### 3. **Execute the Plan** (`/bp:execute-prp`)
 - Follows your patterns exactly
 - Writes production-ready code
 - Runs tests and linting
 - Validates everything works
 
-### 4. **Execute Tasks** (`/bp:execute:task`)
+### 4. **Execute Tasks** (`/bp:execute-task`)
 - Breaks down complex features into manageable tasks
 - Executes task-by-task with validation
 - Perfect for large implementations
@@ -108,19 +116,19 @@ This will automatically install documentation templates to your project, enablin
 **brainstorm → generate prp → execute**
 
 1. **Start with Ideas** - Use `/bp:brainstorm` when you need to explore and refine feature concepts
-2. **Generate Implementation Plan** - Use `/bp:generate:prp` to create detailed technical specifications  
+2. **Generate Implementation Plan** - Use `/bp:generate-prp` to create detailed technical specifications  
 3. **Choose Your Execution Path**:
-   - **Simple Features**: `/bp:execute:prp` - Direct implementation for straightforward tasks
-   - **Complex Features**: `/bp:execute:task` - Step-by-step implementation with progress tracking
+   - **Simple Features**: `/bp:execute-prp` - Direct implementation for straightforward tasks
+   - **Complex Features**: `/bp:execute-task` - Step-by-step implementation with progress tracking
 
 ### 🚀 Quick Implementation Flow
 **generate prp → execute**
 
 Skip brainstorming when you have clear requirements:
-1. **Generate Plan**: `/bp:generate:prp`
-2. **Execute**: Choose `/bp:execute:prp` for simple features or `/bp:execute:task` for complex ones
+1. **Generate Plan**: `/bp:generate-prp`
+2. **Execute**: Choose `/bp:execute-prp` for simple features or `/bp:execute-task` for complex ones
 
-> **Pro Tip**: Use `/bp:execute:task` for higher quality first-pass implementations on complex features
+> **Pro Tip**: Use `/bp:execute-task` for higher quality first-pass implementations on complex features
 
 ## 💎 What You Get
 
@@ -204,5 +212,3 @@ MIT License - Use freely in commercial projects
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blue)](https://claude.ai/code)
 [![Threads / Open Source Alternatives](https://img.shields.io/badge/Threads-OpenSourceAlternatves-black)](https://www.threads.com/@opensourcealternatives)
-
-**v1.4.0** | *Updated: October 12, 2025*
